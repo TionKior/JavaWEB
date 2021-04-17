@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/01_servlet/01_servlet.iml" filepath="$PROJECT_DIR$/01_servlet/01_servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02_servlet&amp;http&amp;request/02_servlet&amp;http&amp;request.iml" filepath="$PROJECT_DIR$/02_servlet&amp;http&amp;request/02_servlet&amp;http&amp;request.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02_tlogin/02_tlogin.iml" filepath="$PROJECT_DIR$/02_tlogin/02_tlogin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/03_response/03_response.iml" filepath="$PROJECT_DIR$/03_response/03_response.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04_cookie&amp;session/04_cookie&amp;session.iml" filepath="$PROJECT_DIR$/04_cookie&amp;session/04_cookie&amp;session.iml" />
+    </modules>
+  </component>
+</project>
