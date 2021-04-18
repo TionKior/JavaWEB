@@ -16,7 +16,7 @@
       System.out.println("hello jsp");
     %>
 
-    hi~ jsp
+    hi~ jsp.
 
   </body>
 </html>
