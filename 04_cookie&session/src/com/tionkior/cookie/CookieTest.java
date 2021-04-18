@@ -69,6 +69,9 @@ public class CookieTest extends HttpServlet {
 
                     response.getWriter().write("<h1>您上次访问时间为:" + value + "</h1>");
 
+                    response.getWriter().write("<html>");
+
+
                     break;
                 }
             }

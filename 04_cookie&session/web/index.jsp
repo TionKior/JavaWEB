@@ -7,16 +7,32 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
+    <head>
+        <title>$Title$</title>
+    </head>
+    <body>
 
-    <%
-      System.out.println("hello jsp");
-    %>
+        <%
+            System.out.println("hello jsp");
+            int i = 5;
 
-    hi~ jsp.
+            String contextPath = request.getContextPath();
+            out.print(contextPath);
 
-  </body>
+
+        %>
+
+
+
+        <%!
+            int i = 3;
+        %>
+
+        <%= "hello" %>
+
+        <%response.getWriter().write("response");%>
+
+        <h1>hi~ jsp!</h1>
+
+    </body>
 </html>
