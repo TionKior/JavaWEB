@@ -19,6 +19,7 @@ public class SessionDemo3 extends HttpServlet {
 
         //设置Cookie存活时间
         c.setMaxAge(60 * 60);
+
         //发送数据
         response.addCookie(c);
 

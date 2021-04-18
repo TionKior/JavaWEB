@@ -5,7 +5,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 
-@WebServlet("/sessionDemo3")
+@WebServlet("/sessionDemo4")
 public class SessionDemo4 extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -13,15 +13,6 @@ public class SessionDemo4 extends HttpServlet {
         //1.获取session
         HttpSession session = request.getSession();
         System.out.println(session);
-
-        //期望客户端关闭后,session也能相同
-        Cookie c = new Cookie("JSESSIONID", session.getId());
-
-        //设置Cookie存活时间
-        c.setMaxAge(60 * 60);
-        //发送数据
-        response.addCookie(c);
-
 
     }
 

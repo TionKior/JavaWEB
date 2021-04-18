@@ -20,6 +20,8 @@ public class SessionDemo2 extends HttpServlet {
         //2.获取数据
         Object msg = session.getAttribute("msg");
 
+        //session.invalidate();
+
         System.out.println(msg);
 
     }

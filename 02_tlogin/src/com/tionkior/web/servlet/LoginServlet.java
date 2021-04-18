@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
         //3.创建User对象
         User loginUser = new User();
 
-        //3.2使用BeanUtils封装
+        //3.1使用BeanUtils封装
         try {
             BeanUtils.populate(loginUser, map);
         } catch (IllegalAccessException e) {
