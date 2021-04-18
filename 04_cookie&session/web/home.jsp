@@ -1,9 +1,7 @@
 <%--
-  Created by IntelliJ IDEA.
   User: TionKior
   Date: 2021/4/18
-  Time: 9:26
-  To change this template use File | Settings | File Templates.
+  Time: 9:29
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
