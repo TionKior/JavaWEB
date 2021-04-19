@@ -17,7 +17,7 @@
     <body>
 
         <%
-
+            out.write("hello jsp");
         %>
 
         $END$
