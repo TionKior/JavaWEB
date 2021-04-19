@@ -17,8 +17,6 @@
     <body>
 
         <%
-            List list = new ArrayList<>();
-            int i = 3 / 0;
 
         %>
 
