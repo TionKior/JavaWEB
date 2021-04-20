@@ -32,7 +32,5 @@
         ${3 > 4 && 3 < 4}<br>
         ${3 > 4 and 3 < 4}<br>
 
-        ${empty list}
-
     </body>
 </html>
