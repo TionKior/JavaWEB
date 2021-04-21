@@ -16,6 +16,15 @@ public class User {
     private int age;
     private Date birthday;
 
+    public User() {
+    }
+
+    public User(String name, int age, Date birthday) {
+        this.name = name;
+        this.age = age;
+        this.birthday = birthday;
+    }
+
     /**
      * 逻辑视图
      *
