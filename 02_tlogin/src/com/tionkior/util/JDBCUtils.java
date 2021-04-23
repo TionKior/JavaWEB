@@ -14,7 +14,7 @@ import java.util.Properties;
  * @Author : TionKior
  * @Date : 2021/4/13 17:38
  * @Version : V1.0
- * @Description : JDBC工具类,使用Durid连接池
+ * @Description : JDBC工具类,使用Druid连接池
  */
 
 public class JDBCUtils {
