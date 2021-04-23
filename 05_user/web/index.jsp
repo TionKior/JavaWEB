@@ -24,6 +24,8 @@
         </script>
     </head>
     <body>
+
+        <div>${user.name},欢迎您</div>
         <div align="center">
             <a
                     href="${pageContext.request.contextPath}/userListServlet"

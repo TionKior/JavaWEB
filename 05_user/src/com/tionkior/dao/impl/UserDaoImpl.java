@@ -3,6 +3,7 @@ package com.tionkior.dao.impl;
 import com.tionkior.dao.UserDao;
 import com.tionkior.domain.User;
 import com.tionkior.util.JDBCUtils;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -29,4 +30,18 @@ public class UserDaoImpl implements UserDao {
 
         return users;
     }
+
+    @Override
+    public User findUserByUsernameAndPassword(String username, String password) {
+        try {
+            //1.定义sql
+            String sql = "select * from user where username = ? and password = ?";
+            User user = template.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), username, password);
+            return user;
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 }

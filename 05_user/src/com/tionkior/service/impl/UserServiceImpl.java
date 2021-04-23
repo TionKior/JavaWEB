@@ -23,4 +23,10 @@ public class UserServiceImpl implements UserService {
         //调用Dao完成查询
         return dao.findAll();
     }
+
+    @Override
+    public User login(User user) {
+        //账号密码登录
+        return dao.findUserByUsernameAndPassword(user.getUsername(), user.getPassword());
+    }
 }
