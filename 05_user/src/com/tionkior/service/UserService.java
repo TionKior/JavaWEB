@@ -1,5 +1,6 @@
 package com.tionkior.service;
 
+import com.tionkior.domain.PageBean;
 import com.tionkior.domain.User;
 
 import java.util.List;
@@ -53,4 +54,13 @@ public interface UserService {
      * @param ids
      */
     void delSelectedUser(String[] ids);
+
+    /**
+     * 分页查询
+     *
+     * @param currentPage
+     * @param rows
+     * @return
+     */
+    PageBean<User> findUserByPage(String currentPage, String rows);
 }
