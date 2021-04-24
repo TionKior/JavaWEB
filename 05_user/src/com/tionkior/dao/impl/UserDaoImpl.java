@@ -106,7 +106,41 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<User> findByPage(int start, int rows, Map<String, String[]> condition) {
-        String sql = "select * from user limit ? , ?";
-        return template.query(sql, new BeanPropertyRowMapper<User>(User.class), start, rows);
+        String sql = "select * from user where 1 = 1 ";
+
+        StringBuilder sb = new StringBuilder(sql);
+        //2.遍历map
+        Set<String> keySet = condition.keySet();
+        //定义参数的集合
+        List<Object> params = new ArrayList<Object>();
+        for (String key : keySet) {
+
+            //排除分页条件参数
+            if ("currentPage".equals(key) || "rows".equals(key)) {
+                continue;
+            }
+
+            //获取value
+            String value = condition.get(key)[0];
+            //判断value是否有值
+            //"".equals(value)为真代表没值,前面加个!代表有值的情况下为true,没值则为false
+            if (value != null && !"".equals(value)) {
+                //有值
+                sb.append(" and " + key + " like ? ");
+                params.add("%" + value + "%");//?条件的值,因为是like查询,一定要记住在两端加%
+            }
+        }
+
+        //添加分页查询
+        sb.append(" limit ?,?");
+        //添加分页查询参数值
+        params.add(start);
+        params.add(rows);
+
+        sql = sb.toString();
+        System.out.println(sql);
+        System.out.println(params);
+
+        return template.query(sql, new BeanPropertyRowMapper<User>(User.class), params.toArray());
     }
 }
