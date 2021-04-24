@@ -18,7 +18,10 @@
     <body>
         <div class="container" style="width: 400px;">
             <h3 style="text-align: center;">修改联系人</h3>
-            <form action="" method="post">
+            <form action="${pageContext.request.contextPath}/updateUserServlet" method="post">
+                <!-- 隐藏域 提交id-->
+                <input type="hidden" name="id" value="${user.id}">
+
                 <div class="form-group">
                     <label for="name">姓名：</label>
                     <input type="text" class="form-control" id="name" name="name" value="${user.name}"

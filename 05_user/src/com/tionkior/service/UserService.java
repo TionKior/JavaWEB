@@ -39,4 +39,11 @@ public interface UserService {
      * @return
      */
     User findUserById(String id);
+
+    /**
+     * 修改用户信息
+     *
+     * @param user
+     */
+    void updateUser(User user);
 }

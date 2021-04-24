@@ -44,4 +44,9 @@ public class UserServiceImpl implements UserService {
     public User findUserById(String id) {
         return dao.findById(Integer.parseInt(id));
     }
+
+    @Override
+    public void updateUser(User user) {
+        dao.update(user);
+    }
 }

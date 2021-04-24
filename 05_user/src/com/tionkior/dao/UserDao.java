@@ -45,4 +45,6 @@ public interface UserDao {
      * @return
      */
     User findById(int i);
+
+    void update(User user);
 }
