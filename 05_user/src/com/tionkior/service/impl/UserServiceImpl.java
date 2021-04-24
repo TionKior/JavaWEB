@@ -7,6 +7,7 @@ import com.tionkior.domain.User;
 import com.tionkior.service.UserService;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName : UserServiceImpl
@@ -65,7 +66,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public PageBean<User> findUserByPage(String _currentPage, String _rows) {
+    public PageBean<User> findUserByPage(String _currentPage, String _rows, Map<String, String[]> condition) {
 
         //将两个参数转换为int类型
         int currentPage = Integer.parseInt(_currentPage);
@@ -83,14 +84,13 @@ public class UserServiceImpl implements UserService {
         userPageBean.setRows(rows);
 
         //3.调用dao查询totalCount总记录数
-        int totalCount = dao.findTotalCount();
-
+        int totalCount = dao.findTotalCount(condition);
         userPageBean.setTotalCount(totalCount);
-        //5.调用dao查询list集合
+        //4.调用dao查询list集合
         //计算开始的记录索引
         int start = (currentPage - 1) * rows;
 
-        List<User> list = dao.findByPage(start, rows);
+        List<User> list = dao.findByPage(start, rows, condition);
         userPageBean.setList(list);
 
         //5.计算总页码

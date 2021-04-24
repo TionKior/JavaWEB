@@ -9,12 +9,15 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.Map;
 import java.util.Objects;
 
 @WebServlet("/findUserByPageServlet")
 public class FindUserByPageServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
+
         //1.获取参数
         String currentPage = request.getParameter("currentPage"); //当前页码
         String rows = request.getParameter("rows"); //每页显示条数
@@ -26,14 +29,13 @@ public class FindUserByPageServlet extends HttpServlet {
             rows = "5";
         }
 
+        //获取条件查询参数
+        Map<String, String[]> condition = request.getParameterMap();
 
-
-        /*currentPage = Objects.requireNonNullElse(currentPage, "1");
-        rows = Objects.requireNonNullElse(rows, "5");*/
 
         //2.调用service查询
         UserService service = new UserServiceImpl();
-        PageBean<User> userPageBean = service.findUserByPage(currentPage, rows);
+        PageBean<User> userPageBean = service.findUserByPage(currentPage, rows, condition);
 
         //System.out.println(userPageBean);
 
