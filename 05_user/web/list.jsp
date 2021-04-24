@@ -143,18 +143,22 @@
                 <nav aria-label="Page navigation">
                     <ul class="pagination">
                         <c:if test="${userPageBean.currentPage == 1}">
-                        <li class="disabled">
-                            </c:if>
-                            <c:if test="${userPageBean.currentPage != 1}">
-                        <li>
-                            </c:if>
+                            <li class="disabled">
+                                <a href="${pageContext.request.contextPath}/findUserByPageServlet?currentPage=${userPageBean.currentPage - 1}&rows=5"
+                                   aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                        </c:if>
+                        <c:if test="${userPageBean.currentPage != 1}">
+                            <li>
+                                <a href="${pageContext.request.contextPath}/findUserByPageServlet?currentPage=${userPageBean.currentPage - 1}&rows=5"
+                                   aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                        </c:if>
 
-                        <li>
-                            <a href="${pageContext.request.contextPath}/findUserByPageServlet?currentPage=${userPageBean.currentPage - 1}&rows=5"
-                               aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
 
                         <c:forEach begin="1" end="${userPageBean.totalPage}" var="i">
 
