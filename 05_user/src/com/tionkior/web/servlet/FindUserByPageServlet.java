@@ -9,6 +9,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.Objects;
 
 @WebServlet("/findUserByPageServlet")
 public class FindUserByPageServlet extends HttpServlet {
@@ -17,6 +18,18 @@ public class FindUserByPageServlet extends HttpServlet {
         //1.获取参数
         String currentPage = request.getParameter("currentPage"); //当前页码
         String rows = request.getParameter("rows"); //每页显示条数
+
+        if (currentPage == null || "".equals(currentPage)) {
+            currentPage = "1";
+        }
+        if (rows == null || "".equals(rows)) {
+            rows = "5";
+        }
+
+
+
+        /*currentPage = Objects.requireNonNullElse(currentPage, "1");
+        rows = Objects.requireNonNullElse(rows, "5");*/
 
         //2.调用service查询
         UserService service = new UserServiceImpl();

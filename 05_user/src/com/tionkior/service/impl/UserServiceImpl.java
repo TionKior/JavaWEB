@@ -71,6 +71,11 @@ public class UserServiceImpl implements UserService {
         int currentPage = Integer.parseInt(_currentPage);
         int rows = Integer.parseInt(_rows);
 
+        //当当前页面为1时,再次点击上一页返回第一页,不会报错
+        if (currentPage <= 0) {
+            currentPage = 1;
+        }
+
         //1.创建空的PageBean对象
         PageBean<User> userPageBean = new PageBean<User>();
         //2.设置当前页面属性和rows属性
