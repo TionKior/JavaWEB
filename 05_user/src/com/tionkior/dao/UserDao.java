@@ -37,4 +37,12 @@ public interface UserDao {
      * @param i
      */
     void delete(int i);
+
+    /**
+     * 根据id查询
+     *
+     * @param i
+     * @return
+     */
+    User findById(int i);
 }

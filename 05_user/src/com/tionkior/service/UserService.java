@@ -31,4 +31,12 @@ public interface UserService {
      * @param id
      */
     void deleteUser(String id);
+
+    /**
+     * 根据id查询
+     *
+     * @param id
+     * @return
+     */
+    User findUserById(String id);
 }
