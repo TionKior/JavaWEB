@@ -34,17 +34,17 @@ public interface UserDao {
     /**
      * 删除用户
      *
-     * @param i
+     * @param id
      */
-    void delete(int i);
+    void delete(int id);
 
     /**
      * 根据id查询
      *
-     * @param i
+     * @param id
      * @return
      */
-    User findById(int i);
+    User findById(int id);
 
     void update(User user);
 }
