@@ -11,6 +11,7 @@ public interface UserDao {
 
     public List<User> findAll();
 
-    public User findUserByUsernameAndPassword(String username, String password);
+    User findUserByUsernameAndPassword(String username, String password);
 
+    void addUser(User user);
 }

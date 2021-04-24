@@ -18,4 +18,10 @@ public interface UserService {
 
     public User login(User user);
 
+    /**
+     * 保存User
+     *
+     * @param user
+     */
+    void addUser(User user);
 }

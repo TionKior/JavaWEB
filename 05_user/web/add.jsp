@@ -1,3 +1,11 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: TionKior
+  Date: 2021/4/24
+  Time: 8:38
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!-- HTML5文档-->
 <!DOCTYPE html>
 <!-- 网页使用的语言 -->
@@ -24,7 +32,7 @@
     <body>
         <div class="container">
             <center><h3>添加联系人页面</h3></center>
-            <form action="" method="post">
+            <form action="${pageContext.request.contextPath}/addUserServlet" method="post">
                 <div class="form-group">
                     <label for="name">姓名：</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="请输入姓名">
@@ -32,8 +40,8 @@
 
                 <div class="form-group">
                     <label>性别：</label>
-                    <input type="radio" name="sex" value="男" checked="checked"/>男
-                    <input type="radio" name="sex" value="女"/>女
+                    <input type="radio" name="gender" value="男" checked="checked"/>男
+                    <input type="radio" name="gender" value="女"/>女
                 </div>
 
                 <div class="form-group">

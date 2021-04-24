@@ -29,4 +29,9 @@ public class UserServiceImpl implements UserService {
         //账号密码登录
         return dao.findUserByUsernameAndPassword(user.getUsername(), user.getPassword());
     }
+
+    @Override
+    public void addUser(User user) {
+        dao.addUser(user);
+    }
 }
