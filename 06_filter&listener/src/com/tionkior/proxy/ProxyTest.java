@@ -35,11 +35,22 @@ public class ProxyTest {
              */
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                System.out.println("该方法执行了...");
-                System.out.println(method.getName());
-                System.out.println(args[0]);
 
-                return null;
+                //判断是否是sale方法
+                if (method.getName().equals("sale")) {
+                    //1.增强参数
+                    double money = (double) args[0];
+                    money = money * 0.85;
+                    System.out.println("专车接你...");
+                    //使用真实对象调用该方法
+                    String obj = (String) method.invoke(lenovo, money);
+                    System.out.println("免费送货...");
+                    //2.增强返回值
+                    return obj + "_鼠标垫";
+                } else {
+                    Object obj = method.invoke(lenovo, args);
+                    return obj;
+                }
             }
         });
 
