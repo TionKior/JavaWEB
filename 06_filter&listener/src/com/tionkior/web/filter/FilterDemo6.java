@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebFilter("/*")
+//@WebFilter("/*")
 public class FilterDemo6 implements Filter {
 
     @Override
