@@ -1,7 +1,11 @@
 package com.tionkior.web.listener;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 /**
  * @ClassName : ContextLoaderListener
@@ -11,6 +15,7 @@ import javax.servlet.ServletContextListener;
  * @Description : 监听器实现类
  */
 
+@WebListener
 public class ContextLoaderListener implements ServletContextListener {
 
     /**
@@ -22,6 +27,25 @@ public class ContextLoaderListener implements ServletContextListener {
      */
     @Override
     public void contextInitialized(ServletContextEvent sce) {
+        //加载资源文件
+        //1.获取ServletContext对象
+        ServletContext servletContext = sce.getServletContext();
+
+        //2.加载资源文件
+        String contextConfigLocation = servletContext.getInitParameter("contextConfigLocation");
+
+        //3.获取真实路径
+        String realPath = servletContext.getRealPath(contextConfigLocation);
+
+        try {
+            //4.加载进内存
+            FileInputStream fis = new FileInputStream(realPath);
+            System.out.println(fis);
+            fis.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         System.out.println("ServletContext对象被创建了");
     }
 
