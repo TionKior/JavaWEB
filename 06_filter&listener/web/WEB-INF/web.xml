@@ -18,9 +18,9 @@
     <!--
         配置监听器
     -->
-    <listener>
-        <listener-class>com.tionkior.web.listener.ContextLoaderListener</listener-class>
-    </listener>
+    <!--    <listener>-->
+    <!--        <listener-class>com.tionkior.web.listener.ContextLoaderListener</listener-class>-->
+    <!--    </listener>-->
 
     <!-- 指定初始化参数 -->
     <!--<context-param>

@@ -15,7 +15,7 @@ import java.io.FileNotFoundException;
  * @Description : 监听器实现类
  */
 
-@WebListener
+
 public class ContextLoaderListener implements ServletContextListener {
 
     /**
