@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,7 +58,7 @@ public class FilterTest1 implements Filter {
             ServletContext servletContext = config.getServletContext();
             String realPath = servletContext.getRealPath("/WEB-INF/classes/敏感词汇.txt");
             //2.读取文件
-            BufferedReader br = new BufferedReader(new FileReader(realPath));
+            BufferedReader br = new BufferedReader(new FileReader(realPath, StandardCharsets.UTF_8));
             //3.将文件的每一行数添加到list中
             String line = null;
             while ((line = br.readLine()) != null) {
