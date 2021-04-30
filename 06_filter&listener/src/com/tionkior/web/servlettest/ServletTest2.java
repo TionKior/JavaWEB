@@ -14,6 +14,9 @@ public class ServletTest2 extends HttpServlet {
 
         //重定向
         response.sendRedirect("/servletTest3");
+
+        //设置request域存储数据
+        request.setAttribute("msg", "hello request");
     }
 
     @Override
