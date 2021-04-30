@@ -17,6 +17,9 @@ public class ServletTest2 extends HttpServlet {
 
         //设置request域存储数据
         request.setAttribute("msg", "hello request");
+
+        //request域获取数据
+        String msg = (String) request.getAttribute("msg");
     }
 
     @Override
