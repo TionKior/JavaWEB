@@ -12,7 +12,8 @@ public class ServletTest2 extends HttpServlet {
         //请求转发
         request.getRequestDispatcher("/servletTest3").forward(request, response);
 
-
+        //重定向
+        response.sendRedirect("/servletTest3");
     }
 
     @Override
