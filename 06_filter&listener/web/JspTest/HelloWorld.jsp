@@ -17,6 +17,7 @@
             arrayList.add("hello world");
             arrayList.add("jsp");
             arrayList.add("ssx");
+            arrayList.add("ssx");
 
             request.setAttribute("arrayList", arrayList);
         %>
