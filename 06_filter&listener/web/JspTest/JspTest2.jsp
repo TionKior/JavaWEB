@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: TionKior
   Date: 2021/5/2
@@ -12,6 +13,16 @@
         <title>Title</title>
     </head>
     <body>
+        <%
+            List<String> list = new ArrayList<String>();
+            list.add("123");
+            list.add("456");
+            list.add("789");
 
+            request.setAttribute("msg", list);
+        %>
+        <c:forEach var="str" items="${msg}" varStatus="s">
+            ${s.count}   ${str}
+        </c:forEach>
     </body>
 </html>
