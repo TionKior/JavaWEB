@@ -26,7 +26,7 @@
             ${s.count}   ${str}
         </c:forEach>
         <c:if test="${String == 'String'}">
-            传递到了数据
+            接收到了数据
         </c:if>
     </body>
 </html>
