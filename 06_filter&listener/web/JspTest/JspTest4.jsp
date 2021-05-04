@@ -20,9 +20,13 @@
             list.add("789");
 
             request.setAttribute("msg", list);
+            request.setAttribute("String", "String");
         %>
         <c:forEach var="str" items="${msg}" varStatus="s">
             ${s.count}   ${str}
         </c:forEach>
+        <c:if test="${String == 'String'}">
+            传递到了数据
+        </c:if>
     </body>
 </html>
