@@ -26,7 +26,7 @@
             ${s.count}   ${str}
         </c:forEach>
         <c:if test="${String == 'String'}">
-            接收到了数据
+            接收到了数据,在里面判断字符串需要用单引号
         </c:if>
     </body>
 </html>
