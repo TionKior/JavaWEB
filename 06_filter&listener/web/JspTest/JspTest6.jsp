@@ -21,6 +21,7 @@
 
             request.setAttribute("msg", list);
             request.setAttribute("String", "String");
+
         %>
         <c:forEach var="str" items="${msg}" varStatus="s">
             ${s.count}   ${str}
