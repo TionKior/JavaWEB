@@ -32,17 +32,14 @@
             var index; //随机角标
             $(function () {
                 //处理按钮是否可以使用的效果
-                $("#startID").prop("disabled", false);
-                $("#stopID").prop("disabled", true);
-
+                disable(false, true);
 
                 //1.给开始按钮绑定单击事件
                 $("#startID").click(function () {
                     //1.1 定义循环定时器 20毫秒执行一次
                     startId = setInterval(function () {
                         //处理按钮是否可以使用的效果
-                        $("#startID").prop("disabled", true);
-                        $("#stopID").prop("disabled", false);
+                        disable(true, false);
 
 
                         //1.2生成随机角标 0-6
@@ -55,9 +52,7 @@
                 //2.给结束按钮绑定单击事件
                 $("#stopID").click(function () {
                     //处理按钮是否可以使用的效果
-                    $("#startID").prop("disabled", false);
-                    $("#stopID").prop("disabled", true);
-
+                    disable(false, true);
 
                     //1.1 停止定时器
                     clearInterval(startId)
@@ -68,6 +63,11 @@
                 });
             });
 
+            //设置开始或结束按钮可不可用的函数
+            function disable(a, b) {
+                $("#startID").prop("disabled", a);
+                $("#stopID").prop("disabled", b);
+            }
 
         </script>
 
