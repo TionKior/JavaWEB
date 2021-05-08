@@ -31,16 +31,14 @@
             }
         </style>
         <script>
-            //需求：点击qq表情，将其追加到发言框中
+            //需求：点击qq表情,将其追加到发言框中
             $(function () {
                 //1.给img图片添加onclick事件
                 $("ul img").click(function () {
-                    //2.追加到p标签中即可。
+                    //2.追加到p标签中即可
                     $(".word").append($(this).clone());
                 });
-
             });
-
 
         </script>
 
