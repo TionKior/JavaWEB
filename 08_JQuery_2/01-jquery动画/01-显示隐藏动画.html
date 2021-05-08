@@ -12,9 +12,14 @@
                 /*$("#showDiv").hide("slow","swing",function () {
                     alert("隐藏了...");
                 });*/
-                //默认方式
+                /*//默认方式
+                $("#showDiv").hide(5000, "swing");*/
 
-                $("#showDiv").hide(5000, "swing");
+                /*//滑动方式
+                $("#showDiv").slideUp("slow");*/
+
+                //淡入淡出方式
+                $("#showDiv").fadeOut("slow");
             }
 
             //显示div
@@ -23,14 +28,26 @@
                     alert("显示了...");
                 });*/
                 //默认方式
-
                 $("#showDiv").show("fast", "linear");
+
+                /*//滑动方式
+                $("#showDiv").slideDown("slow");*/
+
+                //淡入淡出方式
+                $("#showDi").fadeIn("slow");
             }
 
             //切换显示和隐藏div
             function toggleFn() {
+                /*//默认方式
+                $("#showDiv").toggle("slow");*/
 
-                $("#showDiv").toggle("slow");
+                /*//滑动方式
+                $("#showDiv").slideToggle("slow");*/
+
+                //淡入淡出方式
+                $("#showDiv").fadeToggle("slow");
+
             }
         </script>
 
