@@ -5,6 +5,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tionkior.domain.Person;
 import org.junit.Test;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.util.Date;
+
 /**
  * @ClassName : JacksonTest
  * @Author : TionKior
@@ -39,7 +43,28 @@ public class JacksonTest {
          */
         String json = mapper.writeValueAsString(p);
         //{"name":""张三","age":23,"gender":"男"}
-        System.out.println(json);//{"name":"张三","age":23,"gender":"男"}
+        //System.out.println(json);//{"name":"张三","age":23,"gender":"男"}
+
+        //writeValue,将数据写到d://a.txt文件中
+        mapper.writeValue(new File("d://a.txt"), p);
+        //writeValue,将数据关联到Writer中
+        mapper.writeValue(new FileWriter("d://b.txt"), p);
+    }
+
+    @Test
+    public void test2() throws Exception {
+        //1.创建Person对象
+        Person p = new Person();
+        p.setName("张三");
+        p.setAge(23);
+        p.setGender("男");
+        p.setBirthday(new Date());
+
+        //2.转换
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(p);
+
+        System.out.println(json);//{"name":"张三","age":23,"gender":"男","birthday":1620537136040}
 
 
     }
