@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.FileWriter;
-import java.util.Date;
+import java.util.*;
 
 /**
  * @ClassName : JacksonTest
@@ -65,7 +65,58 @@ public class JacksonTest {
         String json = mapper.writeValueAsString(p);
 
         System.out.println(json);//{"name":"张三","age":23,"gender":"男","birthday":1620537136040}
+    }
 
+    @Test
+    public void test3() throws Exception {
+        //1.创建Person对象
+        Person p = new Person();
+        p.setName("张三");
+        p.setAge(23);
+        p.setGender("男");
+        p.setBirthday(new Date());
+
+        Person p1 = new Person();
+        p1.setName("张三");
+        p1.setAge(23);
+        p1.setGender("男");
+        p1.setBirthday(new Date());
+
+        Person p2 = new Person();
+        p2.setName("张三");
+        p2.setAge(23);
+        p2.setGender("男");
+        p2.setBirthday(new Date());
+
+        //创建List集合
+        List<Person> ps = new ArrayList<Person>();
+        ps.add(p);
+        ps.add(p1);
+        ps.add(p2);
+
+        //2.转换
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(ps);
+        // [{},{},{}]
+        //[{"name":"张三","age":23,"gender":"男","birthday":"2021-05-09"},{"name":"张三","age":23,"gender":"男","birthday":"2021-05-09"},{"name":"张三","age":23,"gender":"男","birthday":"2021-05-09"}]
+        System.out.println(json);
+
+    }
+
+    @Test
+    public void test4() throws Exception {
+        //1.创建map对象
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("name", "张三");
+        map.put("age", 23);
+        map.put("gender", "男");
+
+
+        //2.转换
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(map);
+        //{"name":"张三","age":23,"gender":"男"}
+        System.out.println(json);//{"gender":"男","name":"张三","age":23}
 
     }
 
