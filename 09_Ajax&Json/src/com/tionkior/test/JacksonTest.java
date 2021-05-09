@@ -133,7 +133,6 @@ public class JacksonTest {
         Person person = mapper.readValue(json, Person.class);
 
         System.out.println(person);
-
     }
 
 }
