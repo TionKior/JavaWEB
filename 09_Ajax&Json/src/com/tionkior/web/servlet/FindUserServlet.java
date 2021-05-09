@@ -1,6 +1,8 @@
 package com.tionkior.web.servlet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.tionkior.service.UsernameService;
+import com.tionkior.service.impl.UsernameServiceImpl;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -25,16 +27,16 @@ public class FindUserServlet extends HttpServlet {
         response.setContentType("application/json;charset=utf-8");
         Map<String, Object> map = new HashMap<String, Object>();
 
-        if ("tom".equals(username)) {
-            //存在
-            map.put("userExsit", true);
-            map.put("msg", "此用户太受欢迎,请更换一个");
+        UsernameService service = new UsernameServiceImpl();
 
-
-        } else {
+        if (service.finUsername(username)) {
             //不存在
             map.put("userExsit", false);
             map.put("msg", "用户名可用");
+        } else {
+            //存在
+            map.put("userExsit", true);
+            map.put("msg", "此用户太受欢迎,请更换一个");
         }
 
         //将map转为json,并且传递给客户端
