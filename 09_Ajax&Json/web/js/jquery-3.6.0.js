@@ -96,6 +96,7 @@
     var document = window.document;
 
 
+
     var preservedScriptAttributes = {
         type: true,
         src: true,
@@ -147,6 +148,7 @@
     /* global Symbol */
 // Defining this global in .eslintrc.json would create a danger of using the global
 // unguarded in another place, it seems safer to define global only for this module
+
 
 
     var
@@ -520,7 +522,6 @@
         return type === "array" || length === 0 ||
             typeof length === "number" && length > 0 && (length - 1) in obj;
     }
-
     var Sizzle =
         /*!
  * Sizzle CSS Selector Engine v2.3.6
@@ -920,7 +921,6 @@
                     }
                     return (cache[key + " "] = value);
                 }
-
                 return cache;
             }
 
@@ -2983,6 +2983,7 @@
         })(window);
 
 
+
     jQuery.find = Sizzle;
     jQuery.expr = Sizzle.selectors;
 
@@ -4382,6 +4383,7 @@
     var dataPriv = new Data();
 
     var dataUser = new Data();
+
 
 
 //	Implementation Summary
@@ -8600,6 +8602,8 @@
     });
 
 
+
+
 // Return jQuery for attributes-only inclusion
 
 
@@ -8840,6 +8844,7 @@
     var nonce = {guid: Date.now()};
 
     var rquery = (/\?/);
+
 
 
 // Cross-browser xml parsing
