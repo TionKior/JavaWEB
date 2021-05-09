@@ -120,4 +120,20 @@ public class JacksonTest {
 
     }
 
+    //演示 JSON字符串转为Java对象
+    @Test
+    public void test5() throws Exception {
+        //1.初始化JSON字符串
+        String json = "{\"gender\":\"男\",\"name\":\"张三\",\"age\":23}";
+
+        //2.创建ObjectMapper对象
+        ObjectMapper mapper = new ObjectMapper();
+
+        //3.转换为Java对象 Person对象
+        Person person = mapper.readValue(json, Person.class);
+
+        System.out.println(person);
+
+    }
+
 }
