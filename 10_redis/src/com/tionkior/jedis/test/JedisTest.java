@@ -1,5 +1,6 @@
-package com.tionkior.jedis.text;
+package com.tionkior.jedis.test;
 
+import com.tionkior.jedis.util.JedisPoolUtils;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
@@ -181,6 +182,22 @@ public class JedisTest {
         jedis.set("hehe", "haha");
 
         //4.关闭 归还到连接池中
+        jedis.close();
+    }
+
+    /**
+     * jedis连接池工具类使用
+     */
+    @Test
+    public void test8() {
+
+        //通过连接池工具类获取
+        Jedis jedis = JedisPoolUtils.getJedis();
+
+        //使用
+        jedis.set("hello", "world");
+
+        //关闭 归还到连接池中
         jedis.close();
     }
 
