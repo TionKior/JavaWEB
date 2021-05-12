@@ -144,14 +144,15 @@ public class JedisTest {
         //1.获取连接
         Jedis jedis = new Jedis(); //如果使用空参构造,默认值 "localhost",6379端口
         //2.操作
+        // shoredset 存储
+        jedis.zadd("mysortedset", 3, "亚瑟");
+        jedis.zadd("mysortedset", 30, "后裔");
+        jedis.zadd("mysortedset", 25, "孙悟空");
 
 
-        // set 存储
-        jedis.sadd("myset", "java", "php", "c++");
-
-        //set 获取
-        Set<String> myset = jedis.smembers("myset");
-        System.out.println(myset);
+        // shoredset 获取
+        Set<String> mysortedset = jedis.zrange("mysortedset", 0, -1);
+        System.out.println(mysortedset);
 
         //3.关闭连接
         jedis.close();
