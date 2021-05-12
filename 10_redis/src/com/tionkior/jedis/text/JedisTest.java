@@ -3,6 +3,7 @@ package com.tionkior.jedis.text;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -81,6 +82,62 @@ public class JedisTest {
 
         System.out.println(name);
 
+
+        //3.关闭连接
+        jedis.close();
+    }
+
+    /**
+     * list数据结构操作
+     */
+    @Test
+    public void test4() {
+        //1.获取连接
+        Jedis jedis = new Jedis(); //如果使用空参构造,默认值 "localhost",6379端口
+        //2.操作
+        // list 存储
+        jedis.lpush("mylist", "a", "b", "c"); //从左边存
+        jedis.rpush("mylist", "a", "b", "c"); //从右边村
+
+        // list 范围获取
+        List<String> mylist = jedis.lrange("mylist", 0, -1);
+        System.out.println(mylist);
+
+        // list 弹出
+        String element1 = jedis.lpop("mylist");
+        String element2 = jedis.rpop("mylist");
+
+        // list 范围获取
+        List<String> mylist2 = jedis.lrange("mylist", 0, -1);
+        System.out.println(mylist2);
+
+        //3.关闭连接
+        jedis.close();
+    }
+
+    /**
+     * set数据结构操作
+     */
+    @Test
+    public void test5() {
+        //1.获取连接
+        Jedis jedis = new Jedis(); //如果使用空参构造,默认值 "localhost",6379端口
+        //2.操作
+        // list 存储
+        jedis.lpush("mylist", "a", "b", "c"); //从左边存
+        jedis.rpush("mylist", "a", "b", "c"); //从右边村
+
+        // list 范围获取
+        List<String> mylist = jedis.lrange("mylist", 0, -1);
+        System.out.println(mylist);
+
+        // list 弹出
+        String element1 = jedis.lpop("mylist");
+        String element2 = jedis.rpop("mylist");
+
+        // list 范围获取
+        List<String> mylist2 = jedis.lrange("mylist", 0, -1);
+        System.out.println(mylist2);
 
         //3.关闭连接
         jedis.close();
