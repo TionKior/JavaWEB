@@ -3,5 +3,6 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/05_user/src/敏感词汇.txt" charset="GBK" />
     <file url="file://$PROJECT_DIR$/11_maven/maven_java_2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/11_maven/maven_java_2/src/main/resources" charset="UTF-8" />
   </component>
 </project>
