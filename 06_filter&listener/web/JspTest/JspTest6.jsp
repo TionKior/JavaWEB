@@ -19,7 +19,6 @@
             list.add("456");
             list.add("789");
 
-
             request.setAttribute("msg", list);
             request.setAttribute("String", "String");
         %>
